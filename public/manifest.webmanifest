@@ -2,7 +2,7 @@
   "name": "BudgetTrackerPWA",
   "short_name": "BudgetTracker",
   "start_url": "/",
-  "theme_color":  "#dddddd",
-  "background_color": "#dddddd",
+  "theme_color":  "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone"
 }
