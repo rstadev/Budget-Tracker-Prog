@@ -11,6 +11,8 @@
   This project was assinged during the Georgia Tech Full Stack Flex Development Program. The aim of this project was to add additonal code to a pre-existing app in order to give it extra functionality, as well as enable offline usage. I believe I have accomplished this.
   <br>
 
+  ![ReadMeGen Picture](./public/assets/budget-tracker-demo.png)
+
   
   
   ## Table of Contents
@@ -18,9 +20,7 @@
   2. [Installation](#installation)
   3. [Usage](#usage)
   4. [License](#license)
-  5. [Contributing](#contributing)
-  6. [Tests](#tests)
-  7. [ContactMe](#contactme)
+  5. [ContactMe](#contactme)
   
 
 
