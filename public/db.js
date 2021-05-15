@@ -12,11 +12,18 @@ request.onupgradeneeded = event => {
 
 request.onsuccess = event => {
   console.log(event.target.result);
-  console.log(db);
+  db = event.target.result;
+
   if (navigator.onLine) {
     checkDatabase();
   }
 };
+
+request.onerror = function (e) {
+  console.log(`Woops! ${e.target.errorCode}`);
+};
+
+
 
 function saveRecord(record) {
   const transaction = db.transaction(["transaction"], "readwrite");
@@ -35,7 +42,7 @@ function checkDatabase() {
 
 
   getAll.onsuccess = function () {
-    // If there are items in the store, we need to bulk add them when we are back online
+
     if (getAll.result.length > 0) {
       fetch('/api/transaction/bulk', {
         method: 'POST',
@@ -46,15 +53,14 @@ function checkDatabase() {
         },
       })
         .then((response) => response.json())
-        .then((res) => {
-          if (res.length !== 0) {
+        .then(() => {
 
             transaction = db.transaction(['transaction'], 'readwrite');
 
             const currentStore = transaction.objectStore('transaction');
 
             currentStore.clear();
-          }
+          
         });
     }
   };

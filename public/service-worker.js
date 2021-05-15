@@ -6,7 +6,8 @@ const FILES_TO_CACHE = [
   "/styles.css",
   "/index.js",
   "/db.js",
-  "/manifest.webmanifest"
+  "/manifest.webmanifest",
+  "/service-worker.js"
 ];
 
 const CACHE_NAME = "static-cache-v1";
