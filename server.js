@@ -2,8 +2,6 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-const path = require('path');
-
 
 const PORT = 3000 || process.env.PORT;
 
@@ -15,9 +13,9 @@ app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/budget", {
+mongoose.connect("mongodb://localhost/budget"|| process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
