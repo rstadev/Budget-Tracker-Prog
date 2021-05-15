@@ -40,15 +40,12 @@ self.addEventListener("activate", function(evt) {
   self.clients.claim();
 });
 
-// fetch
 self.addEventListener("fetch", function(evt) {
-  // cache successful requests to the API
   if (evt.request.url.includes("/api/")) {
     evt.respondWith(
       caches.open(DATA_CACHE_NAME).then(cache => {
         return fetch(evt.request)
           .then(response => {
-            // If the response was good, clone it and store it in the cache.
             if (response.status === 200) {
               cache.put(evt.request.url, response.clone());
             }
@@ -56,7 +53,6 @@ self.addEventListener("fetch", function(evt) {
             return response;
           })
           .catch(err => {
-            // Network request failed, try to get it from the cache.
             return cache.match(evt.request);
           });
       }).catch(err => console.log(err))
