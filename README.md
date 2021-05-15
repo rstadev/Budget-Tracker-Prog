@@ -31,7 +31,7 @@
 
 
   ## Usage
-  To use this app, simply follow the link to the deployed app here: 
+  To use this app, simply follow the link to the deployed app here: https://boiling-reaches-45767.herokuapp.com/
   <br>
 
   ## License

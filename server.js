@@ -13,9 +13,9 @@ app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect("mongodb://localhost/budget"|| process.env.MONGODB_URI, {
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
